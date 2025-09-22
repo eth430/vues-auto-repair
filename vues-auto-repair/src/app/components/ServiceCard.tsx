@@ -14,7 +14,7 @@ export default function ServiceCard({ title, description, price, icon }: Service
         </div>
       )}
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-gray-600 mb-4">{description}</p>
+      <p className="text-gray-700 mb-4">{description}</p>
       {price && (
         <p className="text-lg font-semibold text-blue-600">
           Starting at {price}

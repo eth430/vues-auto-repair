@@ -5,7 +5,7 @@ export default function Contact() {
     <main className="min-h-screen py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-4">Contact Us</h1>
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
           Get in touch for service appointments, estimates, or any questions about your vehicle. 
           We&apos;re here to help!
         </p>
@@ -36,7 +36,7 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h3 className="font-semibold">Address</h3>
-                    <p className="text-gray-600">123 Main Street<br />City, State 12345</p>
+                    <p className="text-gray-700">123 Main Street<br />City, State 12345</p>
                   </div>
                 </div>
 
@@ -46,7 +46,7 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h3 className="font-semibold">Phone</h3>
-                    <p className="text-gray-600">(555) 555-0123</p>
+                    <p className="text-gray-700">(555) 555-0123</p>
                   </div>
                 </div>
 
@@ -56,7 +56,7 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-600">info@vuesautorepair.com</p>
+                    <p className="text-gray-700">info@vuesautorepair.com</p>
                   </div>
                 </div>
 
@@ -66,7 +66,7 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h3 className="font-semibold">Business Hours</h3>
-                    <div className="text-gray-600">
+                    <div className="text-gray-700">
                       <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
                       <p>Saturday: 9:00 AM - 4:00 PM</p>
                       <p>Sunday: Closed</p>

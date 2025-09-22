@@ -69,7 +69,7 @@ export default function Services() {
     <main className="min-h-screen py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-4">Our Services</h1>
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
           We offer a comprehensive range of automotive services to keep your vehicle running at its best. 
           All work is backed by our satisfaction guarantee.
         </p>
@@ -85,28 +85,28 @@ export default function Services() {
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-xl font-semibold mb-2">Certified Technicians</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 Our ASE-certified mechanics have years of experience and ongoing training 
                 to handle all makes and models.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Quality Parts</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 We use only OEM or high-quality aftermarket parts that meet or exceed 
                 manufacturer specifications.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Warranty Protection</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 All our work comes with a comprehensive warranty for your peace of mind 
                 and protection.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Transparent Pricing</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 No hidden fees or surprises. We provide detailed estimates and explain 
                 all work before we begin.
               </p>

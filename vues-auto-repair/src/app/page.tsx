@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Expert Auto Repair You Can Trust
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
             Professional automotive services with honest pricing and exceptional customer care. 
             Your satisfaction is our top priority.
           </p>
@@ -42,7 +42,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">General Maintenance</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 Oil changes, filter replacements, fluid checks, and regular tune-ups to keep your vehicle running smoothly.
               </p>
             </div>
@@ -54,7 +54,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">Brake Service</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 Complete brake system inspection, pad replacement, rotor resurfacing, and brake fluid service.
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">Engine Diagnostics</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 State-of-the-art diagnostic equipment to identify and resolve engine problems quickly and accurately.
               </p>
             </div>
@@ -86,7 +86,7 @@ export default function Home() {
       <section className="bg-gray-100 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-700 mb-8">
             Contact us today for a free estimate or to schedule your service appointment.
           </p>
           <div className="flex gap-4 justify-center">
