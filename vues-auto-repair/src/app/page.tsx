@@ -188,6 +188,7 @@ export default function Home() {
           px: 2,
           background: `linear-gradient(135deg, ${colors.racing.asphalt} 0%, ${colors.racing.midnight} 100%)`,
           position: 'relative',
+          overflow: 'hidden',
           '&::before': {
             content: '""',
             position: 'absolute',

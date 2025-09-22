@@ -100,6 +100,19 @@ export default function Navbar() {
                       color: colors.racing.logoBlue,
                       backgroundColor: 'transparent',
                       textShadow: `0 0 10px ${colors.racing.logoBlue}60`,
+                      transform: 'translateY(-1px)',
+                      transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                      '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: `linear-gradient(45deg, transparent 30%, ${colors.racing.logoBlue}20 50%, transparent 70%)`,
+                        opacity: 0,
+                        animation: 'speed-lines 0.6s ease-out',
+                      },
                       '&::after': {
                         content: '""',
                         position: 'absolute',
@@ -110,7 +123,29 @@ export default function Navbar() {
                         height: '2px',
                         background: colors.racing.logoBlue,
                         boxShadow: `0 0 8px ${colors.racing.logoBlue}`,
+                        animation: 'glow-pulse 1.5s ease-in-out infinite alternate',
                       }
+                    },
+                    '@keyframes speed-lines': {
+                      '0%': {
+                        opacity: 0,
+                        transform: 'translateX(-100%)',
+                      },
+                      '50%': {
+                        opacity: 1,
+                      },
+                      '100%': {
+                        opacity: 0,
+                        transform: 'translateX(100%)',
+                      },
+                    },
+                    '@keyframes glow-pulse': {
+                      '0%': {
+                        boxShadow: `0 0 8px ${colors.racing.logoBlue}`,
+                      },
+                      '100%': {
+                        boxShadow: `0 0 15px ${colors.racing.logoBlue}, 0 0 25px ${colors.racing.logoBlue}40`,
+                      },
                     },
                   }}
                 >
@@ -124,10 +159,36 @@ export default function Navbar() {
               sx={{ 
                 display: { xs: 'block', md: 'none' },
                 color: 'white',
+                position: 'relative',
                 '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  transform: 'scale(1.1)',
-                }
+                  transform: 'scale(1.1) rotate(5deg)',
+                  transition: 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: -2,
+                    left: -2,
+                    right: -2,
+                    bottom: -2,
+                    background: `linear-gradient(45deg, ${colors.racing.logoBlue}40, transparent)`,
+                    borderRadius: '50%',
+                    animation: 'spin-glow 0.8s ease-out',
+                  }
+                },
+                '@keyframes spin-glow': {
+                  '0%': {
+                    transform: 'rotate(0deg) scale(0.8)',
+                    opacity: 0,
+                  },
+                  '50%': {
+                    opacity: 1,
+                  },
+                  '100%': {
+                    transform: 'rotate(360deg) scale(1.2)',
+                    opacity: 0,
+                  },
+                },
               }}
               onClick={toggleDrawer}
               edge="end"
