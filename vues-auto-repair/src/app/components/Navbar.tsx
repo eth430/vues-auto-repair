@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useTheme } from '@mui/material/styles';
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   IconButton,
   Box,
@@ -17,10 +15,10 @@ import {
   ListItemText,
   Container,
 } from '@mui/material';
+import { colors } from '@/theme';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const theme = useTheme();
 
   const navigationItems = [
     { label: 'Home', href: '/' },
@@ -38,29 +36,48 @@ export default function Navbar() {
       <AppBar 
         position="sticky" 
         sx={{ 
-          backgroundColor: 'background.paper',
-          color: 'text.primary',
-          boxShadow: theme.shadows[4]
+          background: `linear-gradient(135deg, ${colors.racing.modernGray} 0%, ${colors.racing.gunmetal} 100%)`,
+          backdropFilter: 'blur(10px)',
+          borderBottom: `1px solid ${colors.racing.gridLine}`,
+          boxShadow: `0 4px 20px rgba(0, 212, 255, 0.1)`,
+          borderRadius: 0,
+          '& .MuiPaper-root': {
+            borderRadius: 0,
+          }
         }}
       >
         <Container maxWidth="lg">
           <Toolbar sx={{ minHeight: 64 }}>
             {/* Logo */}
-            <Typography
-              variant="h6"
+            <Box
               component={Link}
               href="/"
               sx={{
                 flexGrow: { xs: 1, md: 0 },
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
-                color: 'primary.main',
-                textDecoration: 'none',
                 mr: { md: 4 },
+                display: 'flex',
+                alignItems: 'center',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  transform: 'scale(1.02)',
+                  filter: 'brightness(1.1)',
+                }
               }}
             >
-              Vue&apos;s Auto Repair
-            </Typography>
+              <img
+                src="/logo-no-background.png"
+                alt="Vue's Auto Repair"
+                style={{
+                  height: '40px',
+                  width: 'auto',
+                  maxWidth: '200px',
+                  borderRadius: '4px',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
+                  filter: 'brightness(0) invert(1)',
+                }}
+              />
+            </Box>
 
             {/* Desktop Navigation */}
             <Box sx={{ 
@@ -74,13 +91,26 @@ export default function Navbar() {
                   component={Link}
                   href={item.href}
                   sx={{
-                    color: 'text.primary',
+                    color: colors.racing.chrome,
                     fontWeight: 500,
                     px: 2,
                     py: 1,
+                    position: 'relative',
                     '&:hover': {
-                      color: 'primary.main',
+                      color: colors.racing.logoBlue,
                       backgroundColor: 'transparent',
+                      textShadow: `0 0 10px ${colors.racing.logoBlue}60`,
+                      '&::after': {
+                        content: '""',
+                        position: 'absolute',
+                        bottom: 0,
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '80%',
+                        height: '2px',
+                        background: colors.racing.logoBlue,
+                        boxShadow: `0 0 8px ${colors.racing.logoBlue}`,
+                      }
                     },
                   }}
                 >
@@ -93,7 +123,11 @@ export default function Navbar() {
             <IconButton
               sx={{ 
                 display: { xs: 'block', md: 'none' },
-                color: 'text.primary'
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  transform: 'scale(1.1)',
+                }
               }}
               onClick={toggleDrawer}
               edge="end"
@@ -121,14 +155,26 @@ export default function Navbar() {
           display: { xs: 'block', md: 'none' },
           '& .MuiDrawer-paper': {
             width: 250,
-            bgcolor: 'background.paper',
+            background: `linear-gradient(135deg, ${colors.racing.gunmetal} 0%, ${colors.racing.modernGray} 100%)`,
+            borderLeft: `1px solid ${colors.racing.gridLine}`,
           },
         }}
       >
         <Box sx={{ p: 2 }}>
-          <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 'bold' }}>
-            Vue&apos;s Auto Repair
-          </Typography>
+          <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>
+            <img
+              src="/logo-no-background.png"
+              alt="Vue's Auto Repair"
+              style={{
+                height: '32px',
+                width: 'auto',
+                maxWidth: '180px',
+                borderRadius: '4px',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
+                filter: 'brightness(0) invert(1)',
+              }}
+            />
+          </Box>
           <List>
             {navigationItems.map((item) => (
               <ListItem key={item.href} disablePadding>
@@ -138,15 +184,24 @@ export default function Navbar() {
                   onClick={toggleDrawer}
                   sx={{
                     borderRadius: 1,
+                    mb: 1,
+                    border: `1px solid ${colors.racing.gridLine}`,
                     '&:hover': {
-                      backgroundColor: 'primary.light' + '20',
+                      backgroundColor: colors.racing.logoBlue + '20',
+                      borderColor: colors.racing.logoBlue,
+                      boxShadow: `0 0 15px ${colors.racing.logoBlue}40`,
                     },
                   }}
                 >
                   <ListItemText 
                     primary={item.label} 
-                    primaryTypographyProps={{
-                      fontWeight: 500,
+                    slotProps={{
+                      primary: {
+                        style: {
+                          fontWeight: 500,
+                          color: colors.racing.chrome,
+                        }
+                      }
                     }}
                   />
                 </ListItemButton>
