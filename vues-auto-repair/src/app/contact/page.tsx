@@ -5,8 +5,7 @@ import {
   Box, 
   Container, 
   Typography, 
-  Card, 
-  CardContent,
+  Card,
   Alert
 } from '@mui/material';
 import ContactForm from "../components/ContactForm";
@@ -27,7 +26,7 @@ export default function Contact() {
           sx={{ mb: 6, maxWidth: '750px', mx: 'auto' }}
         >
           Get in touch for service appointments, estimates, or any questions about your vehicle. 
-          We're here to help!
+          We&apos;re here to help!
         </Typography>
 
         <Box

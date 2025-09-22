@@ -5,8 +5,7 @@ import {
   Box, 
   Container, 
   Typography, 
-  Card, 
-  CardContent,
+  Card,
   Avatar
 } from '@mui/material';
 
@@ -42,13 +41,13 @@ export default function About() {
             Our Story
           </Typography>
           <Typography variant="body1" color="text.secondary" paragraph>
-            Founded in 2010, Vue's Auto Repair began with a simple mission: to provide honest, 
+            Founded in 2010, Vue&apos;s Auto Repair began with a simple mission: to provide honest, 
             reliable automotive service at fair prices. What started as a small garage with two 
             mechanics has grown into a full-service facility trusted by thousands of customers.
           </Typography>
           <Typography variant="body1" color="text.secondary">
             We believe in treating every customer like family and every vehicle as if it were our own. 
-            This philosophy has earned Vue's Auto Repair a reputation as the go-to shop in our community.
+            This philosophy has earned Vue&apos;s Auto Repair a reputation as the go-to shop in our community.
           </Typography>
         </Box>
 
@@ -73,7 +72,7 @@ export default function About() {
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 We never recommend unnecessary repairs and always provide honest assessments 
-                of your vehicle's needs.
+                of your vehicle&apos;s needs.
               </Typography>
             </Box>
             <Box>
@@ -91,7 +90,7 @@ export default function About() {
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Every repair comes with a detailed explanation and upfront pricing, 
-                so you know exactly what you're paying for.
+                so you know exactly what you&apos;re paying for.
               </Typography>
             </Box>
             <Box>
@@ -99,7 +98,7 @@ export default function About() {
                 Community
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                We're proud to be part of this community and give back through local 
+                We&apos;re proud to be part of this community and give back through local 
                 sponsorships and charity work.
               </Typography>
             </Box>

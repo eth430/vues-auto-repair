@@ -38,7 +38,7 @@ export default function Footer() {
           {/* Company Info */}
           <Box>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-              Vue's Auto Repair
+              Vue&apos;s Auto Repair
             </Typography>
             <Typography variant="body2" color="grey.400">
               Your trusted partner for all automotive needs. Quality service, honest pricing, and customer satisfaction guaranteed.
@@ -189,7 +189,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <Divider sx={{ my: 4, borderColor: theme.palette.grey[800] }} />
         <Typography variant="body2" textAlign="center" color="grey.400">
-          © {new Date().getFullYear()} Vue's Auto Repair. All rights reserved.
+          © {new Date().getFullYear()} Vue&apos;s Auto Repair. All rights reserved.
         </Typography>
       </Container>
     </Box>
