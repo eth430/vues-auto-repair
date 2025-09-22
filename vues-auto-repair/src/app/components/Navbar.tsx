@@ -59,7 +59,7 @@ export default function Navbar() {
                 mr: { md: 4 },
               }}
             >
-              Vue's Auto Repair
+              Vue&apos;s Auto Repair
             </Typography>
 
             {/* Desktop Navigation */}
@@ -127,7 +127,7 @@ export default function Navbar() {
       >
         <Box sx={{ p: 2 }}>
           <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 'bold' }}>
-            Vue's Auto Repair
+            Vue&apos;s Auto Repair
           </Typography>
           <List>
             {navigationItems.map((item) => (
