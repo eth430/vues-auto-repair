@@ -1,6 +1,5 @@
 'use client';
 
-import { useTheme } from '@mui/material/styles';
 import { 
   Box, 
   Container, 
@@ -8,6 +7,7 @@ import {
   Card, 
   CardContent 
 } from '@mui/material';
+import { colors } from '@/theme';
 
 interface ServiceItemProps {
   title: string;
@@ -17,16 +17,17 @@ interface ServiceItemProps {
 }
 
 function ServiceItem({ title, description, price, icon }: ServiceItemProps) {
-  const theme = useTheme();
-  
   return (
     <Card 
       sx={{ 
         height: '100%',
-        transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+        backgroundColor: colors.racing.carbon,
+        border: `1px solid ${colors.racing.gridLine}`,
+        transition: 'all 0.3s ease-in-out',
         '&:hover': {
-          transform: 'translateY(-4px)',
-          boxShadow: theme.shadows[8],
+          transform: 'translateY(-8px)',
+          borderColor: colors.racing.logoBlue,
+          boxShadow: `0 15px 35px ${colors.racing.logoBlue}30`,
         }
       }}
     >
@@ -36,25 +37,45 @@ function ServiceItem({ title, description, price, icon }: ServiceItemProps) {
             sx={{
               width: 64,
               height: 64,
-              backgroundColor: theme.palette.primary.light + '20',
+              background: `linear-gradient(135deg, ${colors.racing.accentBlue}30, ${colors.racing.logoBlue}20)`,
+              border: `2px solid ${colors.racing.accentBlue}50`,
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               mb: 2,
+              color: colors.racing.logoBlue,
             }}
           >
             {icon}
           </Box>
         )}
-        <Typography variant="h3" gutterBottom>
+        <Typography 
+          variant="h3" 
+          gutterBottom
+          sx={{ color: 'white' }}
+        >
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        <Typography 
+          variant="body2" 
+          sx={{ 
+            mb: 2, 
+            color: colors.racing.chrome,
+            lineHeight: 1.6,
+          }}
+        >
           {description}
         </Typography>
         {price && (
-          <Typography variant="h6" color="primary" sx={{ fontWeight: 600 }}>
+          <Typography 
+            variant="h6" 
+            sx={{ 
+              fontWeight: 600,
+              color: colors.racing.logoBlue,
+              textShadow: `0 0 10px ${colors.racing.logoBlue}60`,
+            }}
+          >
             Starting at {price}
           </Typography>
         )}
@@ -128,51 +149,95 @@ const services = [
 ];
 
 export default function Services() {
-  const theme = useTheme();
-  
   return (
-    <Box component="main" sx={{ minHeight: '100vh', py: 6, px: 2 }}>
-      <Container maxWidth="lg">
-        <Typography variant="h1" textAlign="center" gutterBottom>
-          Our Services
-        </Typography>
-        <Typography 
-          variant="body1" 
-          color="text.secondary"
-          textAlign="center"
-          sx={{ mb: 6, maxWidth: '750px', mx: 'auto' }}
-        >
-          We offer a comprehensive range of automotive services to keep your vehicle running at its best. 
-          All work is backed by our satisfaction guarantee.
-        </Typography>
-
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: {
-              xs: '1fr',
-              md: 'repeat(2, 1fr)',
-              lg: 'repeat(3, 1fr)',
-            },
-            gap: 4,
-            mb: 8,
-          }}
-        >
-          {services.map((service, index) => (
-            <ServiceItem key={index} {...service} />
-          ))}
-        </Box>
-
-        <Card 
-          sx={{ 
-            backgroundColor: theme.palette.primary.light + '10',
-            borderRadius: 3,
-            p: 4 
-          }}
-        >
-          <Typography variant="h2" gutterBottom>
-            Why Choose Us?
+    <Box 
+      component="main" 
+      sx={{ 
+        minHeight: '100vh', 
+        py: 6, 
+        px: 2,
+      }}
+    >
+      {/* Hero Section */}
+      <Box sx={{ background: colors.racing.white, py: 6 }}>
+        <Container maxWidth="lg">
+          <Typography 
+            variant="h1" 
+            textAlign="center" 
+            gutterBottom
+            sx={{
+              color: colors.racing.logoBlue,
+              fontWeight: 900,
+              mb: 3,
+            }}
+          >
+            Our Services
           </Typography>
+          <Typography 
+            variant="body1" 
+            textAlign="center"
+            sx={{ 
+              mb: 6, 
+              maxWidth: '750px', 
+              mx: 'auto',
+              color: colors.racing.asphalt,
+              fontSize: '1.1rem',
+            }}
+          >
+            We offer a comprehensive range of automotive services to keep your vehicle running at its best. 
+            All work is backed by our satisfaction guarantee.
+          </Typography>
+        </Container>
+      </Box>
+      
+      {/* Services Grid */}
+      <Box sx={{ background: `linear-gradient(135deg, ${colors.racing.midnight} 0%, ${colors.racing.asphalt} 100%)`, py: 8 }}>
+        <Container maxWidth="lg">
+
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: '1fr',
+                md: 'repeat(2, 1fr)',
+                lg: 'repeat(3, 1fr)',
+              },
+              gap: 4,
+              mb: 8,
+            }}
+          >
+            {services.map((service, index) => (
+              <ServiceItem key={index} {...service} />
+            ))}
+          </Box>
+        </Container>
+      </Box>
+      
+      {/* Why Choose Us Section */}
+      <Box sx={{ background: colors.racing.lightGray, py: 8 }}>
+        <Container maxWidth="lg">
+
+          <Card 
+            sx={{ 
+              background: colors.racing.white,
+              border: `3px solid ${colors.racing.logoBlue}`,
+              borderRadius: 3,
+              p: 4,
+              boxShadow: `0 10px 30px ${colors.racing.logoBlue}20`,
+            }}
+          >
+            <Typography 
+              variant="h2" 
+              gutterBottom
+              sx={{
+                color: colors.racing.logoBlue,
+                fontWeight: 700,
+                textAlign: 'center',
+                mb: 4,
+              }}
+            >
+              Why Choose Us?
+            </Typography>
           <Box
             sx={{
               display: 'grid',
@@ -183,45 +248,74 @@ export default function Services() {
               gap: 3,
             }}
           >
-            <Box>
-              <Typography variant="h3" gutterBottom>
+            <Box sx={{ p: 2 }}>
+              <Typography 
+                variant="h3" 
+                gutterBottom
+                sx={{ color: colors.racing.logoBlue }}
+              >
                 Certified Technicians
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography 
+                variant="body2" 
+                sx={{ color: colors.racing.silver, fontWeight: 500 }}
+              >
                 Our ASE-certified mechanics have years of experience and ongoing training 
                 to handle all makes and models.
               </Typography>
             </Box>
-            <Box>
-              <Typography variant="h3" gutterBottom>
+            <Box sx={{ p: 2 }}>
+              <Typography 
+                variant="h3" 
+                gutterBottom
+                sx={{ color: colors.racing.logoBlue }}
+              >
                 Quality Parts
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography 
+                variant="body2" 
+                sx={{ color: colors.racing.silver, fontWeight: 500 }}
+              >
                 We use only OEM or high-quality aftermarket parts that meet or exceed 
                 manufacturer specifications.
               </Typography>
             </Box>
-            <Box>
-              <Typography variant="h3" gutterBottom>
+            <Box sx={{ p: 2 }}>
+              <Typography 
+                variant="h3" 
+                gutterBottom
+                sx={{ color: colors.racing.logoBlue }}
+              >
                 Warranty Protection
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography 
+                variant="body2" 
+                sx={{ color: colors.racing.silver, fontWeight: 500 }}
+              >
                 All our work comes with a comprehensive warranty for your peace of mind 
                 and protection.
               </Typography>
             </Box>
-            <Box>
-              <Typography variant="h3" gutterBottom>
+            <Box sx={{ p: 2 }}>
+              <Typography 
+                variant="h3" 
+                gutterBottom
+                sx={{ color: colors.racing.logoBlue }}
+              >
                 Transparent Pricing
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography 
+                variant="body2" 
+                sx={{ color: colors.racing.silver, fontWeight: 500 }}
+              >
                 No hidden fees or surprises. We provide detailed estimates and explain 
                 all work before we begin.
               </Typography>
             </Box>
           </Box>
-        </Card>
-      </Container>
+          </Card>
+        </Container>
+      </Box>
     </Box>
   );
 }
